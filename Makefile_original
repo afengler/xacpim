@@ -1,0 +1,16 @@
+CC	= gcc
+CFLAGS	= -O2 -ansi -g -Wall -L/usr/X11R6/lib -I/usr/X11R6/include
+
+OBJS	= main.o graphics.o sys.o osdep/freebsd.o
+
+all::	${OBJS}
+	${CC} -o xacpim *.o -lX11 -L/usr/X11R6/lib -I/usr/X11R6/include 
+
+install:: xacpim 
+	strip xacpim 
+	cp xacpim /usr/X11R6/bin
+	chmod 0755 /usr/X11R6/bin/xacpim
+
+clean::
+	rm *.o
+	rm xacpim

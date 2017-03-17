@@ -1,0 +1,29 @@
+X ACPI Monitor (xacpim) 
+
+VERSION
+  0.1.1 - 20040823
+  0.1   - 20031223
+
+HISTORY
+  0.1.1 - Bugfix release 
+    * Some strings passed to sysctl was not properly null-terminated
+      causing sysctl to fail. 
+    * Some minor code cleanup
+  0.1 - Initial release
+
+AUTHOR
+  Fredrik Lindberg <fli@shapeshifter.se>
+
+INSTALL
+  make
+  make install
+
+WHAT IS THIS?
+  Small utility to display battery status and temperature on
+  the root-display. Data is gathered using ACPI.
+
+WORKS WITH
+  FreeBSD - Tested with 5.3-BETA1, 5.2.1, 5.2
+
+  Code should be quite easy to port to another platform (with X11).
+  Just add the os dependent code to osdep/ and change the Makefile 
